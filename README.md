@@ -28,12 +28,18 @@
     </div>
 
     <script>
-        var motDePasse = prompt("Entrez le mot de passe à 4 chiffres:");
-        if (motDePasse === "9875") { // Remplacez "1234" par votre mot de passe
-            document.querySelector('.container').style.display = 'block';
-        } else {
-            alert("Mot de passe incorrect!");
-        }
+        var motDePasseCorrect = "9875"; // Remplacez "1234" par votre mot de passe
+        var motDePasse;
+        
+        do {
+            motDePasse = prompt("Entrez le mot de passe à 4 chiffres:");
+            
+            if (motDePasse === motDePasseCorrect) {
+                document.querySelector('.container').style.display = 'block';
+            } else if (motDePasse !== null) { // Vérifie si l'utilisateur n'a pas cliqué sur "Annuler"
+                alert("Mot de passe incorrect! Veuillez réessayer.");
+            }
+        } while (motDePasse !== motDePasseCorrect && motDePasse !== null);
     </script>
 </body>
 </html>
